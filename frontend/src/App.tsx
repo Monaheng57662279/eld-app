@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import MapView from "./components/MapView"
 import ELDLog from "./components/ELDLog"
 
+
 type PlanResponse = {
   ok: boolean
   locations: any
@@ -20,7 +21,8 @@ export default function App() {
     currentCycleUsedHours: 0,
   })
 
-  const backend = (import.meta as any).env.VITE_BACKEND_URL || "http://localhost:8000"
+  const backend = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
