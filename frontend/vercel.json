@@ -1,7 +1,9 @@
 {
-  "build": {
-    "env": {
-      "VITE_BACKEND_URL": "@backend_url"
-    }
-  }
+  "version": 2,
+  "builds": [
+    { "src": "frontend/package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
